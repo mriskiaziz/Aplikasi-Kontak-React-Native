@@ -16,7 +16,7 @@ Tanggal Pembuatan : 21 April 2022 <br>
 ### File Drive
 
 Download Aplikasi Pada Link Berikut, Kemudian Instal Pada Android Anda <br>
-Link : <a href="bit.ly/kontak-react-native">bit.ly/kontak-react-native </a>
+Link : <a href="https://bit.ly/kontak-react-native">bit.ly/kontak-react-native </a>
 
 ### Dengan npm atau expo
 

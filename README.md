@@ -1,6 +1,7 @@
 # My Kontak App
 
 Aplikasi Kontak Android Sederhana dengan React Native <br>
+Aplikasi Hanya dapat berjalan dengan baik pada perangkat Android (website dan ios tidak) <br>
 Nama Aplikasi : My Kontak App <br>
 Tanggal Pembuatan : 21 April 2022 <br>
 

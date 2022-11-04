@@ -19,7 +19,7 @@ Tanggal Pembuatan : 21 April 2022 <br>
 Download Aplikasi Pada Link Berikut, Kemudian Instal Pada Android Anda <br>
 Link : <a href="https://bit.ly/kontak-react-native">bit.ly/kontak-react-native </a>
 
-### Dengan npm atau expo
+### Dengan npm dan git
 
 1. Clone repository ini dengan menjalankan perintah berikut <br>
 
@@ -30,6 +30,9 @@ Link : <a href="https://bit.ly/kontak-react-native">bit.ly/kontak-react-native <
 2. Install npm, kemudian jalankan perintah berikut pada cmd <br>
    ```
    $ cd AwesomeProject
+   ```
+   ```
+   $ npm install
    ```
    ```
    $ npm start

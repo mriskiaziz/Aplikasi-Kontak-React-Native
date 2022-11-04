@@ -14,8 +14,9 @@ import * as Contacts from "expo-contacts";
 
 export default function MainScreen({ navigation }) {
   const [text, settext] = useState("");
-  const [DATA, setDATA] = useState([]);
-  const [database, setDatabase] = useState();
+  const [masterData, setMasterData] = useState();
+  const [filterData, setfilterData] = useState([]);
+  const [search, setsearch] = useState("");
 
   // Mengambil Data
   useEffect(() => {
@@ -28,8 +29,8 @@ export default function MainScreen({ navigation }) {
 
         if (data.length > 0) {
           const contact = data;
-          setDATA(contact);
-          setDatabase(contact);
+          setMasterData(contact);
+          setfilterData(contact);
         }
       }
     })();
@@ -47,13 +48,19 @@ export default function MainScreen({ navigation }) {
   };
 
   // Fungsi Pencarian
-  const cari = () => {
-    let data = database;
-
-    data = data.filter((item) =>
-      item.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())
-    );
-    setDATA(data);
+  const cari = (text) => {
+    if (text) {
+      const newData = masterData.filter((item) => {
+        const itemData = item.name ? item.name.toUpperCase() : "".toUpperCase;
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setfilterData(newData);
+      setsearch(text);
+    } else {
+      setfilterData(masterData);
+      setsearch(text);
+    }
   };
 
   return (
@@ -64,18 +71,15 @@ export default function MainScreen({ navigation }) {
 
       <TextInput
         style={styles.cari}
-        value={text}
+        value={search}
         onChangeText={(text) => {
-          settext(text);
+          cari(text);
         }}
-        onKeyPress={() => {
-          cari();
-        }}
-        placeholder={"Cari Diantara " + DATA.length + " Kontak"}
+        placeholder={"Cari Diantara " + filterData.length + " Kontak"}
       />
 
       <FlatList
-        data={DATA}
+        data={filterData}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
